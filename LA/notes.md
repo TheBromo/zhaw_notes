@@ -98,7 +98,7 @@ $(\vec{a} + \vec{b}) + \vec{c} =\vec{a} + (\vec{b} + \vec{c})$.
 
 $\vec{a}+ \vec{0} = \vec{a}$
 
-**Zu jedem Vektor  $\vec{a}$ gibt es genau einen Gegenvektor $ - \vec{a} \in R^{n}$ mit**
+**Zu jedem Vektor  $\vec{a}$ gibt es genau einen Gegenvektor $-\vec{a} \in R^{n}$ mit**
 
 $\vec{a}+ (- \vec{a}) =  \vec{0}$
 
@@ -113,3 +113,58 @@ Die Subtraktion oder die Differenz von zwei Vektoren $\vec{a}$ und $\vec{b}$ ist
 definiert als die Summe von $\vec{a}$ und $-\vec{b}$, dem Gegenvektor zu $\vec{b}$, also:
 
 $\vec{a} - \vec{b} =\vec{a} + (-\vec{b})$
+
+
+## Multiplikation
+
+Bei der Multiplikation eines Vektors mit einem Skalar $\lambda$ wird jede
+Komponente mit $\lambda$ multipliziert:
+
+![](./img/04_multi.png)
+
+
+Das Ergebnis ist wieder ein Vektor im $R^n$.
+
+Die Anschauung der Multiplikation eines Vektors mit einem Skalar im $R^2$:
+
+
+![](./img/05_visu.png)
+
+## Kollineare und windschiefe Vektoren
+
+### Definition
+
+2 Vektoren $\vec{a}$ und $\vec{b}$ heissen kollinear, wenn es eine reelle Zahl $\lambda$
+gibt, so dass $\vec{a} = \lambda \vec{b}$. Dies bedeutet, dass $\vec{a}$ ein Vielfaches von $\vec{b}$
+ist. Existiert keine solche Zahl, dann sagen wir, dass $\vec{a}$ und $\vec{b}$
+windschief oder nichtkollinear sind. 
+
+![](./img/06_koll.png)
+
+##  Linearkombination
+
+### Definition
+
+![](./img/07_linkom.png)
+
+## Weitere Rechengesetze für Vektoren
+
+![](./img/08_gesetz.png)
+
+
+# Betrag
+
+Der Betrag eines Vektors ist eine reelle Zahl, die >= 0 ist und der
+Länge dieses Vektors entspricht.
+
+
+![](./img/09_betrag.png)
+cc
+## Rechenregeln
+
+![](./img/10_regel.png)
+
+## Einheitsvektoren
+
+![](./img/11_einheit.png)
+

@@ -187,14 +187,14 @@ Möglichkeit (gewisse) Sprachen endlich zu repräsentieren.
 
 ## Definition (Reguläre Ausdrücke)
 
-Es sei $\sum$ ein beliebiges Alphabet. Die Sprache RAΣ der regulären
+Es sei $\sum$ ein beliebiges Alphabet. Die Sprache $RA \sum$ der regulären
 Ausdrücke über $\sum$ ist wie folgt definiert:
 
 ![](./img/21_regex.png)
 
 ## Erläuterungen zur Definition
 
-- Die Sonderzeichen $\varepsilon$ und $\varnothing $ sind reguläre Ausdrücke.
+- Die Sonderzeichen $\varepsilon$ und $\varnothing$ sind reguläre Ausdrücke.
 - Jedes Symbol aus dem Alphabet $\sum$ ist auch ein regulärer Ausdruck über $\sum$.
 - Ist $R$ ein regulärer Ausdruck über $\sum$, dann ist auch $(R^{*})$ ein regulärer Ausdruck über $\sum$.
 - Sind $R$ und $S$ reguläre Ausdrücke über $\sum$, dann sind auch $(RS)$ und $(R|S)$ Ausdrücke über $\sum$.

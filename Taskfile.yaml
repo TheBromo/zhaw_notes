@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  OPTIONS:  -V geometry:a4paper  -V geometry:margin=3cm 
+
+tasks:
+  theo-info:
+    aliases: [thi, th]
+    dir: THI
+    cmds:
+      - pandoc notes.md -f markdown -t pdf -s -o notes.pdf {{.OPTIONS}}
+  lin-alge:
+    aliases: [la, lina]
+    dir: LA
+    cmds:
+      - pandoc notes.md -f markdown -t pdf -s -o notes.pdf {{.OPTIONS}}
