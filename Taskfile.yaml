@@ -16,3 +16,8 @@ tasks:
     dir: LA
     cmds:
       - pandoc notes.md -f markdown -t pdf -s -o notes.pdf {{.OPTIONS}}
+  Analysis-2:
+    aliases: [ana ]
+    dir: ANA2
+    cmds:
+      - pandoc notes.md -f markdown -t pdf -s -o notes.pdf {{.OPTIONS}}
