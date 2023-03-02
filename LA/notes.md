@@ -168,3 +168,90 @@ cc
 
 ![](./img/11_einheit.png)
 
+## Skalarprodukte
+
+### Definition
+
+Skalarprodukte treten z.B. im Zusammenhang mit den folgenden
+Grössen auf:
+
+- Arbeit einer Kraft beim Verschieben einer Masse,
+- Normalform einer Geraden in der Ebene oder einer Ebene.
+
+Das Skalarprodukt zweier Vektoren $\vec{a} \text { und } \vec{b} \text { in } \mathbb{R}^n$ ist ein Skalar
+$\vec{a} \cdot \vec{b} \in \mathbb{R}$ (gelesen: a Punkt b), der auf zwei verschiedene Arten
+berechnet werden kann:
+
+- aus den Beträgen der beiden Vektoren und dem Kosinus des von den Vektoren eingeschlossenen Winkels $\varphi$:
+
+
+$$\vec{a} \cdot \vec{b}=|\vec{a}||\vec{b}| \cos (\varphi)$$
+
+- aus den Komponenten der beiden Vektoren:
+
+
+$$\vec{a} \cdot \vec{b}=a_1 b_1+a_2 b_2+\ldots+a_n b_n=\sum_{i=1}^n a_i b_i$$
+
+
+- Das Skalarprodukt ist eine skalare Grösse und wird auch als inneres Produkt der Vektoren  $\vec{a}$ und $\vec{b}$ bezeichnet
+
+- Das Skalarprodukt lässt sich auch als: $(\vec{a}, \vec{b}), \quad<\vec{a} \mid \vec{b}>$ oder $\vec{a}^{\top} \vec{b}$ schreiben
+
+- Man beachte, dass der Winkel $\varphi$ stets der kleinere der beiden Winkel ist, den die Vektoren $\vec{a}$ und $\vec{b}$ miteinander bilden.
+
+![](./img/12_wink.png)
+
+- $\text { Kommutativgesetz: } \vec{a} \cdot \vec{b}=\vec{b} \cdot \vec{a} \text { für alle Vektoren } \vec{a}, \vec{b} \in \mathbb{R}^n \text {. }$
+
+- Distributivgesetz:
+$$
+\vec{a} \cdot(\vec{b}+\vec{c})=\vec{a} \cdot \vec{b}+\vec{a} \cdot \vec{c} \quad \text { für alle } \vec{a}, \vec{b}, \vec{c} \in \mathbb{R}^n .
+$$
+
+- Gemischtes Assoziativgesetz:
+$\lambda(\vec{a} \cdot \vec{b})=(\lambda \vec{a}) \cdot \vec{b}=\vec{a} \cdot(\lambda \vec{b}) \quad$ für alle $\vec{a}, \vec{b} \in \mathbb{R}^n$ und alle $\lambda \in \mathbb{R}$.
+
+Das Skalarprodukt $\vec{a} \cdot \vec{b}$ zweier vom Nullvektor verschiedener
+Vektoren kann nur verschwinden, wenn $\cos (\varphi)=0, \text { d.h. } \varphi=90^{\circ}\left(\operatorname{oder} \frac{\pi}{2}\right)$ ist. In diesem Fall stehen die Vektoren senkrecht.
+Diese Vektoren heissen orthogonale Vektoren, im Zeichen. $\vec{a} \perp \vec{b}$
+Wir haben die Äquivalenz:
+$$\vec{a} \cdot \vec{b}=0 \Leftrightarrow \vec{a} \perp \vec{b} .$$
+
+
+## Berechnung des Winkels 
+
+Mit Hilfe der Gleichung
+
+$$\vec{a} \cdot \vec{b}=|\vec{a}||\vec{b}| \cos (\varphi)=\sum_{i=1}^n a_i b_i$$
+
+kann man den Winkel $\varphi$ zwischen $\vec{a}$ und $\vec{b}$ berechnen:
+
+$$\cos (\varphi)=\frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}=\frac{\sum_{i=1}^n a_i b_i}{|\vec{a}||\vec{b}|}$$
+
+Wobei $\vec{a} \neq \overrightarrow{0} \text { und } \vec{b} \neq \overrightarrow{0}$ . Durch Umkehrung folgt schliesslich:
+
+$$\varphi=\arccos \left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}\right) \text {, wobei } \vec{a} \neq \overrightarrow{0} \text { und } \vec{b} \neq \overrightarrow{0}$$
+
+
+## Projektion eines Vektors auf einen zweiten Vektor
+
+
+![](./img/13_proj.png)
+
+Der durch die Projektion erhaltene Vektor wird mit ~ba bezeichnet.
+Es gilt:
+
+$$\cos (\varphi)=\frac{\text { Ankathete }}{\text { Hypotenuse }}=\frac{\left|\vec{b}_a\right|}{|\vec{b}|}$$
+
+wobei $\varphi$ der Winkel zwischen $\vec{a}$ und $\vec{b}$ ist. Sein Betrag lautet somit:
+
+$$
+\left|\vec{b}_a\right|=|\vec{b}| \cos (\varphi)
+$$
+
+
+Aus dem Skalarprodukt erhalten wir: $\cos (\varphi)=\frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}$
+
+Es folgt: $$\left|\vec{b}_a\right|=|\vec{b}| \frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|} \Leftrightarrow\left|\vec{b}_a\right|=\frac{\vec{a} \cdot \vec{b}}{|\vec{a}|}$$
+
+
