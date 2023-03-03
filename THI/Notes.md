@@ -206,4 +206,71 @@ Ausdrücke über $\sum$ ist wie folgt definiert:
 ![](./img/23_regex.png)
 
 
+# Reguläre Sprachen
 
+## Satz (Rechenregeln für reguläre Ausdrücke)
+
+- L(R|S) = L(S|R)
+- L(R(ST)) = L((RS)T)
+- L(R|(S|T)) = L((R|S)|T)
+- L(R(S|T)) = L(RS|RT)
+- L((R\*)\*) = L(R\*)
+- L(R|R) = L(R)
+
+## Anwendungen von regulären Ausdrücken:
+
+- Mustersuche in Texten
+- Lexikalische Analyse (in Compilern); Erkennung von Schlüsselwörtern (“Token”)
+- Syntax Test (bei einer einfachen Syntax)
+
+# Endliche Automaten
+
+Beispiel (Einstiegsaufgabe: Eintrittskarte Schwimmbad)
+
+> Kosten 2.- (mindestens), Automat akzeptiert 0.50, 1.- und 2.-
+
+![](./img/24_end_aut.png)
+
+Ein **endlicher Automat** besteht aus (elementare Bausteine):
+
+## Zuständen
+
+![](./img/25_zustand.png)
+
+## Eingabealphabet
+
+0.50, 1.-,2.-
+
+## Übergangsfunktionen
+
+![](./img/25_uebergang.png)
+
+> Wie wird die Eingabe eingegeben?
+> -> Der endliche Automat liest das Wort von links nach rechts
+
+> Wieviel Speicher steht zur Verfügung? Wie geht man mit dem Speicher um?
+> -> Es gibt keinen Speicher.
+> -> Variablen dürfen nicht benutzt werden.
+> -> Der einzige (gespeicherte) Information ist der aktuelle Zustand.
+
+> Wie wird die Ausgabe bestimmt (und ausgegeben)?
+> -> Die Ausgabe erfolgt über akzeptierende Zustände.
+
+
+![](./img/26_symbole.png)
+
+## Definition (Endlicher Automat)
+
+
+Ein (deterministischer) endlicher Automat (EA) ist ein Quintupel
+
+$$M=\left(Q, \Sigma, \delta, q_0, F\right)$$
+
+- endlichen Menge von Zuständen $Q=\left\{q_0, q_1, \ldots, q_n\right\}(n \in \mathbb{N})$
+- Eingabealphabet $\Sigma=\left\{a_1, a_2, \ldots, a_m\right\}(m \in \mathbb{N})$
+- Übergangsfunktion $\delta: Q \times N \rightarrow Q$
+- Startzustand $q_0 \in Q$
+- Menge der akzeptierenden Zustände $F \subseteq Q$
+
+![](./img/27_ubergang.png)
+![](./img/28_zustand.png)
