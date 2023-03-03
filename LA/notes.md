@@ -238,7 +238,7 @@ $$\varphi=\arccos \left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}\right) 
 
 ![](./img/13_proj.png)
 
-Der durch die Projektion erhaltene Vektor wird mit ~ba bezeichnet.
+Der durch die Projektion erhaltene Vektor wird mit $\vec{ba}$ bezeichnet.
 Es gilt:
 
 $$\cos (\varphi)=\frac{\text { Ankathete }}{\text { Hypotenuse }}=\frac{\left|\vec{b}_a\right|}{|\vec{b}|}$$
@@ -254,4 +254,76 @@ Aus dem Skalarprodukt erhalten wir: $\cos (\varphi)=\frac{\vec{a} \cdot \vec{b}}
 
 Es folgt: $$\left|\vec{b}_a\right|=|\vec{b}| \frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|} \Leftrightarrow\left|\vec{b}_a\right|=\frac{\vec{a} \cdot \vec{b}}{|\vec{a}|}$$
 
+## Berechnung des Winkels $\varphi$
+
+
+Mit Hilfe der Gleichung
+
+
+$$\vec{a} \cdot \vec{b}=|\vec{a}||\vec{b}| \cos (\varphi)=\sum_{i=1}^n a_i b_i$$
+
+kann man den Winkel $\varphi$ zwischen $\vec{a}$ und $\vec{b}$ berechnen:
+
+$$\cos (\varphi)=\frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}=\frac{\sum_{i=1}^n a_i b_i}{|\vec{a}||\vec{b}|}$$
+
+$$\varphi=\arccos \left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}\right) \text {, wobei } \vec{a} \neq \overrightarrow{0} \text { und } \vec{b} \neq \overrightarrow{0} \text {. }$$
+
+
+Unter dem Vektorprodukt $\vec{a} \times \vec{b}$ zweier Vektoren $\vec{a} \text { und } \vec{b} \text { in } \mathbb{R}^3$ versteht man den eindeutig bestimmten Vektor, der wie folgt berechnet wird:
+
+$$
+\vec{a} \times \vec{b}=\left(\begin{array}{c}
+a_x \\
+a_y \\
+a_z
+\end{array}\right) \times\left(\begin{array}{l}
+b_x \\
+b_y \\
+b_z
+\end{array}\right)=\left(\begin{array}{c}
+a_y b_z-a_z b_y \\
+a_z b_x-a_x b_z \\
+a_x b_y-a_y b_x
+\end{array}\right)
+$$
+
+Diese Formel kann man sich anhand des folgenden Schemas merken:
+
+![](./img/14_vecprod.png)
+
+Zwei vom Nullvektor verschiedene Vektoren $\vec{a}$ und $\vec{b}$ sind genau
+dann kollinear, wenn ihr Vektorprodukt verschwindet:
+
+$$\vec{a} \times \vec{b}=\overrightarrow{0} \quad \Leftrightarrow \quad \vec{a} \text { und } \vec{b} \text { sind kollinear }$$
+
+
+Distributivgesetze: $\vec{a} \times(\vec{b}+\vec{c})=\vec{a} \times \vec{b}+\vec{a} \times \vec{c}$ und $(\vec{a}+\vec{b}) \times \vec{c}=\vec{a} \times \vec{c}+\vec{b} \times \vec{c}$
+
+$\text { Anti-Kommutativgesetz: } \vec{a} \times \vec{b}=-(\vec{b} \times \vec{a}) \text {. }$
+
+$\text { Assoziativgesetz: } \lambda(\vec{a} \times \vec{b})=(\lambda \vec{a}) \times \vec{b}=\vec{a} \times(\lambda \vec{b}) \text {. }$
+
+## Spatprodukt
+
+Unter dem Spatprodukt $\left[\begin{array}{lll}\vec{a} & \vec{b} & \vec{c}\end{array}\right]$ dreier Vektoren $\vec{a}, \vec{b}$ und $\vec{c}$ in $\mathbb{R}^3$ versteht man das Skalarprodukt aus dem Vektor $\vec{a}$ und dem aus den Vektoren $\vec{b}$ und $\vec{c}$ gebildeten Vektorprodukt $\vec{b} \times \vec{c}:$
+
+$$\left[\begin{array}{lll}\vec{a} & \vec{b} & \vec{c}\end{array}\right]=\vec{a} \cdot(\vec{b} \times \vec{c})$$
+
+### Spatprodukt und Volumen
+
+Die drei Vektoren
+$\vec{a}, \vec{b}$ und $\vec{c}$ spannen
+ein sogenanntes
+Parallelepiped (auch
+Spat, Parallelflach
+oder Parallelotop
+genannt) auf.
+
+![](./img/15_SpatProd.png)
+
+Dem Betrag des Spatproduktes $\left[\begin{array}{lll}\vec{a} & \vec{b} & \vec{c}\end{array}\right]$ kommt dabei die
+geometrische Bedeutung des Spatvolumens zu.
+Aus der Elementarmathematik haben wir die Formel:
+
+Volumen $=$ Grundfläche mal Höhe $\Leftrightarrow V=\mathcal{A} h$.
 
