@@ -327,3 +327,253 @@ Aus der Elementarmathematik haben wir die Formel:
 
 Volumen $=$ Grundfläche mal Höhe $\Leftrightarrow V=\mathcal{A} h$.
 
+
+# Matrizen 
+
+## Definition
+
+Unter einer $m \times n$ Matrix versteht man ein rechteckiges
+Zahlenschema von doppelt indizierten Grössen $a_ij$ mit m waagrecht
+angeordneten Zeilen und n senkrecht angeordneten Spalten:
+
+$$
+A=\left(\begin{array}{cccccc}a_{11} & a_{12} & \ldots & a_{1 j} & \ldots & a_{1 n} \\ a_{21} & a_{22} & \ldots & a_{2 j} & \ldots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\ a_{i 1} & a_{i 2} & \ldots & a_{i j} & \ldots & a_{i n} \\ \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \ldots & a_{m j} & \ldots & a_{m n}\end{array}\right)
+$$
+
+**Zuerst Zeile dann spalte**
+
+Die Grössen $a_ij , i = 1, . . . , m, j = 1, . . . , n$ sind reellen Zahlen und
+heissen die Elemente der Matrix. m ist die Anzahl der Zeilen und n
+die Anzahl der Spalten.
+
+- Matrizen bezeichnen wir gewöhnlich mit grossen lateinischen Buchstaben bsp. A, B, etc.
+- Für die $m \times n$ Matrix A schreibt man auch $[a_ij] für i = 1, . . . , m und j = 1, . . . , n$.
+- Die Menge aller reellen $m \times n$ Matrizen bezeichnen wir mit $\mathbb{R}^{m \times n}$ 
+
+$$\mathbb{R}^{m \times n}=\left\{A=\left[a_{i j}\right] \mid a_{i j} \in \mathbb{R}, i=1, \ldots, m, j=1, \ldots, n\right\}$$
+
+
+## Vektoren als Spezialfälle von Matrizen
+
+Eine Matrix, die aus einer einzigen
+
+- Zeile besteht, nennt man Zeilenmatrix oder Zeilenvektor: $A=\left(\begin{array}{llll}a_{11} & a_{12} & \ldots & a_{1 n}\end{array}\right)$
+- Spalte besteht, nennt man Spaltenmatrix oder spaltenvektor
+
+$$A=\left(\begin{array}{c}a_{11} \\ a_{21} \\ \vdots \\ a_{m 1}\end{array}\right)$$
+
+- Eine $1 \times 1$-Matrix A ist eine Matrix mit einer einzigen Zeile und einer einzigen Spalte, also ein Skalar $A = (a11).$
+
+## Nullmatrix und quadratische Matrizen
+
+- Eine Matrix, bei der alle Elemente den Wert Null haben, bezeichnet man als Nullmatrix O.
+- Eine $n \times n$ Matrix (d.h. m = n) heisst eine quadratische Matrix.
+
+
+## Anmerkungen
+
+- Die Hauptdiagonale einer quadratischen Matrix verläuft von links oben nach rechts unten. Sie verbindet die Diagonalelemente $a_ii, i = 1, . . . , m$ miteinander.
+- Die Diagonalen der Matrix, die parallel zur Hauptdiagonale verlaufen, werden als Nebendiagonalen der Matrix bezeichnet.$
+- Die Gegendiagonale verläuft von rechst oben nach links unten.
+
+![](./img/20_matr.png)
+
+## Diagonalmatrix
+
+Eine quadratische $n \times n$ Matrix A heisst Diagonalmatrix, falls $a_ij = 0 für alle i 6= j$. Somit
+
+$$A=\left(\begin{array}{ccccc}a_{11} & 0 & 0 & \ldots & 0 \\ 0 & a_{22} & 0 & \ldots & 0 \\ 0 & 0 & a_{33} & \ldots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \ldots & a_{n n}\end{array}\right) \in \mathbb{R}^{n \times n}$$
+
+## Einheitsmatrix
+
+$$I_n=\left(\begin{array}{cccc}1 & 0 & \ldots & 0 \\ 0 & 1 & \ldots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \ldots & 1\end{array}\right) \in \mathbb{R}^{n \times n}$$
+
+nennen wir die Einheitsmatrix oder die Identität.
+
+
+## Dreiecksmatrizen
+
+Eine quadratische $n \times n$ Matrix, die oberhalb der Hauptdiagonalen nur Nullen enthält, heisst untere Dreiecksmatrix. Sind alle Elemente unter der Haupdiagonalen null, so heisst sie obere Dreiecksmatrix:
+
+Untere Dreiecksmatrix: A =
+
+$$\left(\begin{array}{ccccc}a_{11} & 0 & 0 & \ldots & 0 \\ a_{21} & a_{22} & 0 & \ldots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ a_{n 1} & a_{n 2} & a_{n 3} & \ldots & a_{n n}\end{array}\right)$$
+
+Obere Dreiecksmatrix: A =
+
+$$\left(\begin{array}{cccc}a_{11} & a_{12} & \ldots & a_{1 n} \\ 0 & a_{22} & \ldots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \ldots & a_{n n}\end{array}\right)$$
+
+
+## Symmetrische Matrizen
+
+Eine quadratische $n \times n$ Matrix A heisst symmetrisch, wenn
+
+$a_{i j}=a_{j i}$, für alle $i, j=1, \ldots, n$.
+
+Die Matrix A =
+
+$$\left(\begin{array}{cccc}1 & 4 & -2 & -10 \\ 4 & 5 & 0 & -1 \\ -2 & 0 & 8 & 5 \\ -10 & -1 & 5 & 15\end{array}\right)$$
+
+ist symmetrisch.
+
+
+## Rechnen mit Matrizen
+
+## Gleichheit von Matrizen
+
+Matrizen sind nicht nur praktisch in der Lagerung von Information sondern auch in deren Verarbeitung. Man kann mit ihnen ähnlich wie mit den reellen Zahlen rechnen.
+
+Zunächst müssen wir klären, wann zwei Matrizen A und B gleich sind. Um zwei Matrizen vergleichen zu können, müssen sie dieselbe Dimension haben.
+
+Zwei $m \times n$ Matrizen $A=\left[a_{i j}\right]$ und $B=\left[b_{i j}\right]$ heissen gleich, $A=B$, wenn gilt: $a_{i j}=b_{i j}$, für alle $i=1, \ldots, m$ und $j=1, \ldots, n$.
+
+
+## Addition und Subtraktion
+
+Seien A und B zwei $m \times n$ Matrizen. Dann:
+
+Gegeben sind 
+
+$$A=\left(\begin{array}{lll}
+1 & 2 & 3 \\
+3 & 3 & 5
+\end{array}\right)$$
+
+
+$$B=\left(\begin{array}{ccc}
+0 & -1 & 3 \\
+-3 & -5 & 0
+\end{array}\right)$$
+
+dann:
+
+$$\begin{aligned}
+A+B & =\left(\begin{array}{lll}
+1 & 2 & 3 \\
+3 & 3 & 5
+\end{array}\right)+\left(\begin{array}{ccc}
+0 & -1 & 3 \\
+-3 & -5 & 0
+\end{array}\right) \\
+& =\left(\begin{array}{lll}
+1+0 & 2-1 & 3+3 \\
+3-3 & 3-5 & 5+0
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 1 & 6 \\
+0 & -2 & 5
+\end{array}\right)
+\end{aligned}$$
+
+## Rechenregeln der Addition
+
+Gegeben sind die $m \times n$ Matrizen A, B und C. Dann gilt:
+
+- Kommutativgesetz: $A + B = B + A$
+- Assoziativgesetz: $(A + B) + C = A + (B + C)$
+
+## Skalare Multiplikation
+
+Die skalare Multiplikation der $m \times n$ Matrix A mit dem reellen
+Skalar $\lambda$ ist definiert durch die elementweise Multiplikation mit $\lambda$:
+
+
+$$\lambda A=\lambda\left(\begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1 n} \\
+a_{21} & a_{22} & \ldots & a_{2 n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m 1} & a_{m 2} & \ldots & a_{m n}
+\end{array}\right)=\left(\begin{array}{cccc}
+\lambda a_{11} & \lambda a_{12} & \ldots & \lambda a_{1 n} \\
+\lambda a_{21} & \lambda a_{22} & \ldots & \lambda a_{2 n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\lambda a_{m 1} & \lambda a_{m 2} & \ldots & \lambda a_{m n}
+\end{array}\right)$$
+
+
+## Gemeinsamer Faktor
+
+
+Besitzen alle Elemente einer Matrix einen gemeinsamen Faktor,
+so kann dieser vor die Matrix gezogen werden.
+
+
+$$A=\left(\begin{array}{ccc}
+5 & 10 & -20 \\
+0 & -5 & 30
+\end{array}\right)
+=
+5\left(\begin{array}{ccc}
+1 & 2 & -4 \\
+0 & -1 & 6
+\end{array}\right)$$
+
+
+## Rechenregeln der skalaren Multiplikation
+
+
+- Assoziativgesetz: $\lambda(\mu A)=\mu(\lambda A)=(\lambda \mu) A$
+- Distributivgesetze: $(\lambda+\mu) A=\lambda A+\mu A \quad \text { und } \quad \lambda(A+B)=\lambda A+\lambda B$
+
+## Linearkombination von Matrizen
+
+Für Matrizen $A_1, A_2, \ldots, A_p$ derselben Grösse und Skalare $\lambda_1, \lambda_2$, $\ldots, \lambda_p$ heisst der Ausdruck
+
+$$\lambda_1 A_1+\lambda_2 A_2+\ldots+\lambda_p A_p$$
+
+Linearkombination von $A_1, A_2, \ldots, A_p$ mit den Koeffizienten $\lambda_1$ $\lambda_2, \ldots, \lambda_p$
+
+
+## Multiplikation von Matrizen
+
+Im Gegensatz zur Addition von Matrizen erfolgt die Multiplikation
+von Matrizen **NICHT ELEMENTWEISE**.
+
+$\text { Gegeben sei die } m \times n \text { Matrix } A \text { und die } n \times p \text { Matrix } B \text {. }$
+
+Die Produktmatrix $C=A B$ ist eine $m \times p$ Matrix, und berechnet sich wie folgt:
+
+$$\begin{aligned}
+c_{i j} & =[A B]_{i j}=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+\ldots+a_{i n} b_{n j} \\
+& =\sum_{k=1}^n a_{i k} b_{k j}, \quad \text { für } i=1, \ldots, m \text { und } j=1, \ldots, p .
+\end{aligned}$$
+
+### Merkregel
+
+Das Matrixelement $c_{i j}$ bekommt man wie folgt:
+$c_{i j}=i$-te Zeile der Matrix $A$ mal $j$-te Spalte der MatrixB.
+Die untenstehende Skizze veranschaulicht diese Merkregel:
+
+$$\left(\begin{array}{cccccc}
+a_{11} & a_{12} & . . & a_{1 k} & . . & a_{1 n} \\
+\vdots & \vdots & & \vdots & & \vdots \\
+a_{i 1} & a_{i 2} & . . & a_{i k} & . . & a_{i n} \\
+\vdots & \vdots & & \vdots & & \vdots \\
+a_{m \mathbf{1}} & a_{m \mathbf{2}} & . . & a_{m k} & . . & a_{m n}
+\end{array}\right)\left(\begin{array}{ccccc}
+b_{11} & . . & b_{1 j} & . . & b_{1 p} \\
+b_{21} & . . & b_{2 j} & . . & b_{\mathbf{2 p}} \\
+\vdots & & \vdots & & \vdots \\
+b_{k 1} & . . & b_{k j} & . . & b_{k p} \\
+\vdots & & \vdots & & \vdots \\
+b_{n \mathbf{1}} & . . & b_{n j} & . . & b_{n p}
+\end{array}\right)=\left(\begin{array}{ccccc}
+c_{11} & . . & c_{1 j} & . . & c_{1 p} \\
+\vdots & & \vdots & & \vdots \\
+c_{i 1} & . . & c_{i j} & . & c_{i p} \\
+\vdots & & \vdots & & \vdots \\
+c_{m \mathbf{1}} & . . & c_{m j} & . . & c_{m p}
+\end{array}\right)$$
+
+![](./img/21_merk.png)
+
+> **Die Anzahl von Spalten in A muss gleich der Anzahl von Zeilen in B sein.**
+
+### Falk Schema
+
+![](./img/22_falk.png)
+
+Das Matrizenprodukt ist i. Allg. nicht kommutativ: $A B \neq B A$.
+
+
+
+

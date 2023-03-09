@@ -16,7 +16,8 @@
         {
             "label": "convert la",
             "type": "shell",
-            "command": "task la"
+            "command": "task la",
+            "problemMatcher": []
         }
     ]
 }
