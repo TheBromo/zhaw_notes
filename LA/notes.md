@@ -577,3 +577,96 @@ Das Matrizenprodukt ist i. Allg. nicht kommutativ: $A B \neq B A$.
 
 
 
+### Das Produkt zweier $n \times n$ Diagonalmatrizen ist kommutativ:
+
+$$
+\begin{aligned}
+& \left(\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & a_{22} & 0 \\
+0 & 0 & a_{33}
+\end{array}\right)\left(\begin{array}{ccc}
+b_{11} & 0 & 0 \\
+0 & b_{22} & 0 \\
+0 & 0 & b_{33}
+\end{array}\right)=\left(\begin{array}{ccc}
+a_{11} b_{11} & 0 & 0 \\
+0 & a_{22} b_{22} & 0 \\
+0 & 0 & a_{33} b_{33}
+\end{array}\right) \\
+= & \left(\begin{array}{ccc}
+b_{11} a_{11} & 0 & 0 \\
+0 & b_{22} a_{22} & 0 \\
+0 & 0 & b_{33} a_{33}
+\end{array}\right)=\left(\begin{array}{ccc}
+b_{11} & 0 & 0 \\
+0 & b_{22} & 0 \\
+0 & 0 & b_{33}
+\end{array}\right)\left(\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & a_{22} & 0 \\
+0 & 0 & a_{33}
+\end{array}\right)
+\end{aligned}
+$$
+
+
+### Rechenregeln der Matrizenmultiplikation
+
+
+Distributivgesetze:
+
+$$\left(A_1+A_2\right) B=A_1 B+A_2 B \text { und } A\left(B_1+B_2\right)=A B_1+A B_2 \text {. }$$
+
+Assoziativgesetze:
+
+$$(A B) C=A(B C) \text { und } \lambda(A B)=(\lambda A) B=A(\lambda B) \text { für alle } \lambda \in \mathbb{R} \text {. }$$
+
+Weiteres Gesetz:
+
+$$A I_n=A \text { und } I_m A=A \text {. }$$
+
+### Inverse Matrix
+
+Gibt es zu einer $n \times n$ Matrix $A$ eine Matrix $X$ mit $A X=X A=I_n$, so heisst $X$ die zu $A$ inverse Matrix. Sie wird durch das Symbol $A^{-1}$ gekennzeichnet.
+
+
+Die Matrizen $A=\left(\begin{array}{cc}1 & -2 \\ -1 & 3\end{array}\right)$ und $B=\left(\begin{array}{ll}3 & 2 \\ 1 & 1\end{array}\right)$ sind zueinander invers:
+$$
+\begin{aligned}
+& \qquad A B=\left(\begin{array}{cc}
+1 & -2 \\
+-1 & 3
+\end{array}\right)\left(\begin{array}{cc}
+3 & 2 \\
+1 & 1
+\end{array}\right)=\left(\begin{array}{cc}
+3-2 & 2-2 \\
+-3+3 & -2+3
+\end{array}\right)=\left(\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right) \\
+& \text { und } B A=\left(\begin{array}{ll}
+3 & 2 \\
+1 & 1
+\end{array}\right)\left(\begin{array}{cc}
+1 & -2 \\
+-1 & 3
+\end{array}\right)=\left(\begin{array}{cc}
+3-2 & -6+6 \\
+1-1 & -2+3
+\end{array}\right)=\left(\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right) \text {. }
+\end{aligned}
+$$
+Somit gilt: $A B=B A=I_2$.
+
+- Falls eine quadratische Matrix $A$ eine Inverse $A^{-1}$ besitzt, so ist $A^{-1}$ eindeutig bestimmt. Die Matrix $A$ heisst in diesem Fall invertierbar (oder umkehrbar). Andernfalls heisst sie singulär.
+- Es gilt: $A A^{-1}=A^{-1} A=I_n$. Das heisst, dass $A$ und $A^{-1}$ kommutativ sind.
+
+$$\left(A_1 A_2 \cdots A_k\right)^{-1}=A_k^{-1} \cdots A_2^{-1} A_1^{-1}$$
+
+l
