@@ -11,7 +11,8 @@
         {
             "label": "convert th",
             "type": "shell",
-            "command": "task th"
+            "command": "task th",
+            "problemMatcher": []
         },
         {
             "label": "convert la",

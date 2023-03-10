@@ -274,3 +274,105 @@ $$M=\left(Q, \Sigma, \delta, q_0, F\right)$$
 
 ![](./img/27_ubergang.png)
 ![](./img/28_zustand.png)
+
+##  Sind NEAs mächtiger als DEAs?
+
+Es gibt einen DEA, der
+die Sprache L akzeptiert.
+
+vs
+
+Es gibt einen NEA, der
+die Sprache L akzeptiert.
+
+Jeder DEA ist ein NEA.
+
+Teilmengenkonstruktion (siehe nächste Folie)
+
+
+### Beweiskonstruktion.
+
+Sei $N=\left(Q_N, \Sigma, \delta_N, q_0, F_N\right)$ ein NEA
+
+Der dazu äquivalente DEA $D=\left(Q_D, \Sigma, \delta_D, q_0, F_D\right)$ wird konstruiert
+durch:
+$$
+Q_D=\mathcal{P}\left(Q_N\right)
+$$
+(Menge aller Teilmengen von $Q_N$ )
+
+$$
+F_D=\left\{S \in Q_D \mid S \cap F_N \neq \emptyset\right\}
+$$
+(alle Mengen aus $Q_D$, die mindestens einen akzeptierenden Zustand aus $F_N$ enthalten.)
+
+$\delta_D(S, a)=\bigcup_{p \in S} \delta_N(p, a)$ für $S \in Q_D$ und $a \in \Sigma$
+(Menge aller Zustände von $D$, die von den Zuständen aus $S$ durch
+Lesen von $a$ erreichbar sind.)
+
+## NEAs mit $\epsilon$ -Übergängen
+
+Suche nach einem von mehreren Mustern:
+$L_5=\left\{w \in\{a, b\}^* \mid w \text { enthält eines der Teilwörter } a b a, a b b, b a b\right\}$
+
+![](./img/29_eig.png)
+
+Ein nichtdeterministischer endlicher Automat mit $\varepsilon$-Übergängen ($\varepsilon$-NEA) wird beschrieben durch
+
+$$M=\left(Q, \Sigma, \delta, q_0, F\right)$$
+
+wobei $Q, \Sigma, q_0$ und $F$ wie beim deterministischen endlichen Automaten definiert sind und die Übergangsfunktion $\delta$ definiert ist als.
+
+$$\delta: Q \times(\Sigma \cup\{\varepsilon\}) \rightarrow \mathcal{P}(Q)$$
+
+
+## Äquivalenz DEA und RA
+
+Satz (Gleichmächtigkeit von RA und DEA)
+
+Es gibt einen $D E A$, der
+$\Longleftrightarrow$
+Es gibt einen $R A$, der die die Sprache L akzeptiert. Sprache $L$ akzeptiert.
+
+**Beweis**
+
+- Dynamische Programmierung: Für jedes Paar von Zuständen p, q regulären Ausdrück finden, der alle Wörter beschreibt, die von p nach q führen.
+- RA in einen speziellen NEA umwandeln, der auch spontane Übergänge (ohne ein Eingabesymbol zu lesen) zulässt. Diese sogenannten $\varepsilon$-NEAs können in NEAs und somit durch Teilmengenkonstruktion in DEAs umgewandelt werden.
+
+Die Klasse der **regulären Sprachen** beinhaltet alle Sprachen, die von
+einem endlichen Automaten akzeptier t werden.
+Jede dieser Sprachen wird regulär genannt.
+
+## Zustandsklassen
+
+$$\text { Klasse }[p]=\left\{w \in \Sigma^* \mid M \text { endet nach dem Lesen von } w \text { in } p\right\}$$
+
+![](./img/30_zustand.png)
+
+Die Menge alle Wörter $\Sigma^*$ wird von den Zustandsklassen $\left[p_0\right]$ bis $\left[p_n\right]$ partitioniert.
+
+## Eigenschaften der Klassen:
+
+- Jedes Wort landet in einem Zustand:
+$$\Sigma^*=\bigcup_{p \in Q}[p]$$
+
+- Kein Wort landet nach dem Lesen in zwei Zuständen:
+$$[p] \cap[q]=\emptyset, \text { für alle } p \neq q, p, q \in Q$$
+
+- Von M akzeptierte Sprache:
+$$L(M)=\bigcup_{p \in F}[p]$$
+
+## Grenzen endlicher Automaten
+
+Wenn ein EA $M$ nach dem Lesen zweier Präfixe $x$ und $y$ im gleichen Zustand landet, kann er nicht mehr zwischen $x$ und $y$ unterscheiden.
+
+Sei $M=\left(Q, \Sigma, \delta, q_0, F\right)$ ein $E A$ und $x$ und $y$ zwei beliebige Wörter aus $\Sigma^*$, so dass $x, y \in[p]$. Dann gilt für alle Wörter $z \in \Sigma^*$
+$$
+x z \in L(M) \quad \Longleftrightarrow \quad y z \in L(M) .
+$$
+
+
+Endlichen Automaten definieren: 5 Tupel
+Übergang skizieren zustände
+Konfiguration eines Automaten; eine momentaufnahem zustand und rest des eingabewortes (Q0,aabba)
+Berechnung start, rechnungsschritte...., endkonfiguration (erfolg oder nein)
