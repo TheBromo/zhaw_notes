@@ -669,4 +669,104 @@ Somit gilt: $A B=B A=I_2$.
 
 $$\left(A_1 A_2 \cdots A_k\right)^{-1}=A_k^{-1} \cdots A_2^{-1} A_1^{-1}$$
 
-l
+Sei $A$ eine $m \times n$ Matrix. Die transponierte Matrix $A^T$ erhält man aus $A$, indem man die $i$-te Spalte von $A$ zur $i$-ten Zeile von $A^T$ macht. Kurz: $\left[A^T\right]_{i j}=a_{j i}$.
+Skizze:
+$$
+A=\left(\begin{array}{ccccc}
+a_{11} & \ldots & a_{1 i} & \ldots & a_{1 n} \\
+a_{21} & \ldots & a_{2 i} & \ldots & a_{2 n} \\
+\vdots & & \vdots & & \vdots \\
+a_{m 1} & \ldots & a_{m i} & \ldots & a_{m n}
+\end{array}\right) \longrightarrow A^T=\left(\begin{array}{cccc}
+a_{11} & a_{21} & \cdots & a_{m 1} \\
+\vdots & \vdots & & \vdots \\
+a_{1 i} & a_{2 i} & \cdots & a_{m i} \\
+\vdots & \vdots & & \vdots \\
+a_{1 n} & a_{2 n} & \cdots & a_{m n}
+\end{array}\right)
+$$
+
+
+
+Wir transponieren die folgenden Matrizen:
+$$
+A=\left(\begin{array}{cc}
+1 & 3 \\
+4 & 2 \\
+0 & -8
+\end{array}\right), \quad B=\left(\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & -2 & 5 \\
+7 & 6 & 0
+\end{array}\right) \quad \text { und } \quad C=\left(\begin{array}{l}
+1 \\
+2 \\
+9
+\end{array}\right)
+$$
+Es gilt:
+$$
+A^T=\left(\begin{array}{ccc}
+1 & 4 & 0 \\
+3 & 2 & -8
+\end{array}\right), \quad B^T=\left(\begin{array}{ccc}
+1 & 0 & 7 \\
+1 & -2 & 6 \\
+1 & 5 & 0
+\end{array}\right) \quad \text { und } \quad C^T=\left(\begin{array}{lll}
+1 & 2 & 9
+\end{array}\right)
+$$
+
+Mit dieser neuen Operation gewinnen wir die Notation $\vec{a}^T \vec{b}$ für das Skalarprodukt $\vec{a} \cdot \vec{b}$.
+
+$$\begin{aligned}
+\vec{a}^T \vec{b} & =\left(\begin{array}{llll}
+a_1 & a_2 & \cdots & a_n
+\end{array}\right)\left(\begin{array}{c}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{array}\right) \\
+& =a_1 b_1+a_2 b_2+\ldots+a_n b_n=\vec{a} \cdot \vec{b}, \quad \text { für alle } \vec{a}, \vec{b} \in \mathbb{R}^n .
+\end{aligned}$$
+
+
+Rechenregeln mit Transponierten
+1. $(A+B)^T=A^T+B^T$ für alle $m \times n$ Matrizen $A$ und $B$.
+2. $(\lambda A)^T=\lambda A^T$ für alle $m \times n$ Matrizen $A$ und alle $\lambda \in \mathbb{R}$.
+3. $(A B)^T=B^T A^T$ für alle $m \times n$ Matrizen $A$ und alle $n \times p$ Matrizen $B$.
+4. $\left(A^T\right)^{-1}=\left(A^{-1}\right)^T$ für alle invertierbare $n \times n$ Matrizen $A$.
+
+# Lineare Gleichungssysteme
+
+Eine lineare Gleichung in einer Variable $x$ ist von der Form
+$$
+a x=b,
+$$
+wobei $a, b$ reelle Konstanten sind. Für $a \neq 0$ ist $x=\frac{b}{a}$ die Lösung.
+
+## Lineare Gleichung in n Variablen und Lösungsmenge
+
+Ein lineares Gleichungssystem (LGS) besteht aus m linearen
+Gleichungen mit n Unbekannten x1, x2, . . . , xn. Ein solches System
+hat die folgende Gestalt:
+
+$$\left\{\begin{array}{cccc}
+a_{11} x_1+a_{12} x_2+\ldots+a_{1 n} x_n & = & b_1 \\
+a_{21} x_1+a_{22} x_2+\ldots+a_{2 n} x_n & = & b_2 \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{m 1} x_1+a_{m 2} x_2+\ldots+a_{m n} x_n & = & b_m
+\end{array}\right.$$
+
+Besitzt ein lineares Gleichungssystem keine Lösung, so sagt man, es
+ist unlösbar (oder inkonsistent). Hat das System mindestens eine
+Lösung, so ist es lösbar (oder konsistent).
+
+
+Sind die rechten Seiten des Gleichungssystems Null, das heisst $b_1=b_2=\ldots=b_m=0$, so heisst das System homogen, andernfalls inhomogen $\left(b_i, i=1, \ldots, m\right.$ sind nicht alle gleich
+
+
+Zwei Gleichungssysteme sind äquivalent, wenn sie dieselbe
+Lösungsmenge haben.
