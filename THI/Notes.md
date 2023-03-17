@@ -376,3 +376,118 @@ Endlichen Automaten definieren: 5 Tupel
 Übergang skizieren zustände
 Konfiguration eines Automaten; eine momentaufnahem zustand und rest des eingabewortes (Q0,aabba)
 Berechnung start, rechnungsschritte...., endkonfiguration (erfolg oder nein)
+
+# Kontextfreie Grammatiken
+
+## Einführung und Definition
+Kontextfreie Grammatik für die nicht-reguläre Sprache $\left\{0^n 1^n \mid n \in \mathbb{N}\right\}$
+
+$$\begin{aligned}
+& A \rightarrow 0 A 1 \\
+& A \rightarrow \varepsilon
+\end{aligned}$$
+
+Eine Ableitung des Wortes 000111 in der Grammatik:
+
+$A \Rightarrow 0 A 1 \Rightarrow 00 A 11 \Rightarrow 000 A 111 \Rightarrow 000111$
+
+Eine kontextfreie Grammatik G (KFG) ist ein 4-Tupel $(N, \Sigma, P, A)$
+
+- $N$ ist das Alphabet der Nichtterminale (Variablen)
+- $\Sigma$ ist das Alphabet der Terminale.
+- $P$ ist eine endliche Menge von Produktionen (Regeln). Jede Produktion hat die Form
+
+$$
+X \rightarrow \beta
+$$
+
+mit Kopf $X \in N$ und Rumpf $\beta \in(N \cup \Sigma)^*$.
+
+- $A \text { ist das Startsymbol, wobei } A \in N \text {. }$
+
+Definition (Satzform)
+$\text { Ein Wort } \beta \in(N \cup \Sigma)^* \text { nennen wir Satzform. }$
+
+## Ableitungsschritt, Ableitung
+
+$\text { Seien } \alpha, \beta \text { und } \gamma \text { Satzformen und } A \rightarrow \gamma \text { eine Produktion. }$
+
+Durch einen Ableitungsschritt wird eine Satzform $\alpha A \beta$ durch die Anwendung der Produktion $A \rightarrow \gamma$ in die Satzform $\alpha \gamma \beta$ abgeleitet.
+Das notieren wir mit:
+$$
+\alpha A \beta \Rightarrow \alpha \gamma \beta
+$$
+
+Eine Ableitung ist eine Folge von Ableitungsschritten, so dass aus einer Satzform $\alpha$ das Wort $w$ abgeleitet wird.
+$$
+\alpha \Rightarrow \ldots \Rightarrow w
+$$
+
+Ein Wort $w \in \Sigma^*$ ist in einer kontextfreien Grammatik $G=(N, \Sigma, P, A)$ ableitbar, falls es eine Ableitung in $G$ gibt, die mit dem Startsymbol $A$ beginnt und mit dem Wort $w$ endet. Dafür schreiben wir
+$$
+A \stackrel{*}{\Rightarrow} w
+$$
+Wir sagen auch, dass $w$ von $A$ erzeugt oder generiert wird.
+
+
+## Rechtseitige und linksseitige Ableitungen  
+
+- Eine linksseitige Ableitung ersetzt bei jedem Ableitungsschritt das Nichtterminal, das am weitesten links in der Satzform auftritt 
+- Eine rechtsseitige Ableitung ersetzt bei jedem Ableitungsschritt das Nichtterminal, das am weitesten rechts in der Satzform auftritt.
+
+## Sprache eine KFG
+
+Die von $G$ erzeugte Sprache $L(G)$ beinhaltet alle Wörter, die in $G$ aus dem Startsymbol $A$ ableitbar sind.
+$$
+L(G)=\left\{w \in \Sigma^* \mid A \stackrel{*}{\Rightarrow} w\right\}
+$$
+
+Wenn es für eine Sprache $L$ eine kontextfreie Grammatik $G$ gibt mit $L=L(G)$, dann nennen wir $L$ eine kontextfreie Sprache.
+
+## Ableitungsbaum
+
+Ein **Ableitungsbaum** ist eine graphische Darstellung einer Ableitung.
+$\text { Beispiel (Ableitungsbaum für das Wort }(())() \text { in } G_2 \text { ) }$
+
+![](./img/bazn.png)
+
+
+## Mehrdeutigkeit (von KFG)
+Beispiel (Kontextfreie Grammatik für einfache arithmetische Ausdrücke)
+
+$$
+G_3=\{\{A\},\{a, \cdot,+,(,)\}, P, A\}, \text { mit } P=\{A \rightarrow A+A|A \cdot A|(A) \mid a\}
+$$
+( $a$ steht vereinfachend für eine beliebige Binärzahl)
+
+![](./img/32_baum.png)
+
+Definition (Mehrdeutige kontextfreie Grammatik)
+> Eine kontextfreie Grammatik nennen wir mehrdeutig, wenn es ein Wort gibt, das mehrere Ableitungsbäume besitzt.
+
+ 
+Definition (Inhärent mehrdeutig)
+
+> Eine kontextfreie Sprache, für die alle Grammatiken mehrdeutig sind, heisst inhärent mehrdeutig.
+
+Die kontextfreien Sprachen enthalten die regulären Sprachen.
+
+
+## Zusammenhang von KFG und regulären Ausdrücken
+
+Jede reguläre Sprache kann durch eine kontextfreie Grammatik beschrieben werden.
+Sei $L$ eine reguläre Sprache. Dann gibt es einen DEA $M=\left(Q, \Sigma, \delta, q_0, F\right)$ mit $L(M)=L$
+Dann können wir eine KFG für $L$ wie folgt bauen:
+1 Für jeden Zustand $q_i$ gibt es ein Nichtterminal $Q_i$.
+2 Für jede Transition $\delta\left(q_i, a\right)=q_j$ erstellen wir die Produktion $Q_i \rightarrow a Q_j$.
+3 Für jeden akzeptierenden Zustand $q_i \in F$ erstellen wir die Produktion $Q_i \rightarrow \varepsilon$.
+4 Das Nichtterminal $Q_0$ wird zum Startsymbol.
+
+![](./img/33_kfg.png)
+
+Techniken für den Entwurf von kontextfreien Grammatiken:
+
+- Komplexe KFGs können oft in mehrere einfachere KFGs aufgeteilt werden und danach mit der Regel $A \rightarrow A_1\left|A_2\right| \ldots \mid A_k$ kombiniert werden.
+- Um eine KFG für eine reguläre Sprache zu erstellen, kann zuerst ein DEA erstellt werden und dieser dann in eine KFG umgewandelt werden.
+- Kontextfreie Sprachen enthalten manchmal Teilwörter, die voneinander „abhängig" sind. Eine KFG für diese Situation kann mit einer Regel $R \rightarrow u R v$ behandelt werden.
+- Komplexere Sprachen sind meist rekursiv aufgebaut. Steht zum Beispiel das Nichtterminal $A$ für einen Ausdruck, kann $A$ wiederum überall dort verwendet werden, wo dieser Ausdruck erlaubt ist.
