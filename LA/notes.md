@@ -745,7 +745,8 @@ Eine lineare Gleichung in einer Variable $x$ ist von der Form
 $$
 a x=b,
 $$
-wobei $a, b$ reelle Konstanten sind. Für $a \neq 0$ ist $x=\frac{b}{a}$ die Lösung.
+wobei $a, b$ reelle Konstanten sind. Für $a \neq 0$ ist $x=\frac{b}{a}$ die 
+Lösung.
 
 ## Lineare Gleichung in n Variablen und Lösungsmenge
 
@@ -770,3 +771,92 @@ Sind die rechten Seiten des Gleichungssystems Null, das heisst $b_1=b_2=\ldots=b
 
 Zwei Gleichungssysteme sind äquivalent, wenn sie dieselbe
 Lösungsmenge haben.
+
+
+### Matrizen und LGS
+
+Mit den Bezeichnungen
+
+$$A=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1 n} \\
+a_{21} & a_{22} & \ldots & a_{2 n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m 1} & a_{m 2} & \ldots & a_{m n}
+\end{array}\right) \in \mathbb{R}^{m \times n}, \vec{x}=\left(\begin{array}{c}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{array}\right), \vec{b}=\left(\begin{array}{c}
+b_1 \\
+b_2 \\
+\vdots \\
+b_m
+\end{array}\right)$$
+
+
+lässt sich
+
+
+$$\left\{\begin{array}{cccc}
+a_{11} x_1+a_{12} x_2+\ldots+a_{1 n} x_n & = & b_1 \\
+a_{21} x_1+a_{22} x_2+\ldots+a_{2 n} x_n & = & b_2 \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{m 1} x_1+a_{m 2} x_2+\ldots+a_{m n} x_n & = & b_m
+\end{array}\right.$$
+
+als $A \vec{x}=\vec{b}$ schreiben. $A \in \math bb{R}^{m \times n}$ ist die Koeffizientenmatrix, $\vec{b} \in \mathbb{R}^m$ ist die rechte Seite des LGS und $\vec{x} \in \mathbb{R}^n$ ist der gesuchte Vektor der Unbekannten.
+
+
+## Elementare Umformungen und Zeilenstufenformen
+
+Das folgende lineare Gleichungssystem ist in Zeilenstufenform
+$$
+\left\{\begin{aligned}
+2 x+6 y+2 z & =8 \\
+y+z & =-4 \\
+-2 z & =10
+\end{aligned}\right.
+$$
+
+Durch Rückwärtseinsetzen kann dieses System direkt gelöst werden.
+
+
+
+Elementare Gleichungsumformungen:
+
+- Vertauschen von den i-ten und j-ten Gleichungen,
+- Multiplikation der $i$-ten Gleichung mit einem von Null verschiedenen Skalar $\lambda$,
+- Addition eines $\lambda$-fachen der $j$-ten Gleichung zu der $i$-ten Gleichung.
+
+Eine Matrix hat Zeilenstufenform (ZSF), wenn folgende
+Eigenschaften erfüllt sind:
+
+- Alle Zeilen, die nur Nullen enthalten, stehen in den untersten Zeilen der Matrix.
+- Wenn eine Zeile nicht nur aus Nullen besteht, so ist die erste von Null verschiedene Zahl eine Eins. Sie wird als führende Eins der Zeile bezeichnet.
+- In zwei aufeinanderfolgenden Zeilen, die nicht verschwindende Elemente besitzen, steht die führende Eins der unteren Zeile rechts von der führenden Eins der oberen Zeile.
+
+Besitzt eine Matrix Zeilenstufenform und gilt noch zusätzlich:
+- eine Spalte, die eine führende Eins enthält, hat keine weiteren von Null verschiedenen Einträge,
+
+dann hat die Matrix reduzierte Zeilenstufenform.
+
+
+Liegt eine Matrix in Zeilenstufenform vor, so stehen unter einer
+führenden Eins nur Nullen.
+Hat die Matrix sogar reduzierte Zeilenstufenform, so stehen auch
+über einer führenden Eins nur Nullen.
+
+Durch elementare Zeilenumformungen kann man stets die
+erweiterte Koeffizientenmatrix eines linearen Gleichungssystems auf
+Zeilenstufenform oder reduzierte Zeilenstufenform bringen.
+
+### Reduzierte Zeilenstufenform
+
+Besitzt eine Matrix Zeilenstufenform und gilt noch zusätzlich:
+eine Spalte, die eine führende Eins enthält, hat keine weiteren
+von Null verschiedenen Einträge,
+dann hat die Matrix reduzierte Zeilenstufenform.
+
+## Das Gauss- und Gauss-Jordan-Verfahren
+
