@@ -491,3 +491,88 @@ Techniken für den Entwurf von kontextfreien Grammatiken:
 - Um eine KFG für eine reguläre Sprache zu erstellen, kann zuerst ein DEA erstellt werden und dieser dann in eine KFG umgewandelt werden.
 - Kontextfreie Sprachen enthalten manchmal Teilwörter, die voneinander „abhängig" sind. Eine KFG für diese Situation kann mit einer Regel $R \rightarrow u R v$ behandelt werden.
 - Komplexere Sprachen sind meist rekursiv aufgebaut. Steht zum Beispiel das Nichtterminal $A$ für einen Ausdruck, kann $A$ wiederum überall dort verwendet werden, wo dieser Ausdruck erlaubt ist.
+
+
+# Kellerautomaten
+
+Funktioniert mit stack memory
+
+Ein Kellerautomat für die kontextfreie Sprache $\left\{0^n 1^n \mid n>0\right\}$ :
+- Solange keine Eins gelesen wird, lege die gelesenen Nullen auf dem Keller ab. Sobald Einsen gelesen werden, entferne für jede gelesene Eins eine Null vom Keller.
+- Akzeptiere das Eingabewort, wenn die Berechnung im akzeptierenden Zustand endet. Der akzeptierende Zustand wird erreicht, wenn (der Keller leer ist und) das ganze Wort gelesen wurde.
+- Andernfalls verwerfe die Eingabe.
+
+![](./img/34_keller.png)
+
+## Definition (deterministischer Kellerautomat)
+
+Ein deterministischer Kellerautomat (KA) $M$ ist ein 7-Tupel $\left(Q, \Sigma, \Gamma, \delta, q_0, \$, F\right)$, wobei
+$Q$ ist eine endliche Menge von Zuständen.
+- $\Sigma$ ist das Alphabet der Eingabe.
+- $\Gamma$ ist das Alphabet des Kellers.
+- $\delta: Q \times(\Sigma \cup \varepsilon) \times \Gamma \rightarrow Q \times \Gamma^*$ ist eine (partielle) Übergangsfunktion.
+$q_0 \in Q$ ist der Startzustand.
+- $\$ \in \Gamma$ ist ein ausgezeichnetes Symbol vom Alphabet des Kellers.
+- $F \subseteq Q$ ist die Menge der akzeptierenden Zustände.
+
+Damit der Determinismus gewährleistet ist, gilt zusätzlich für die Übergangsfunktion $\delta$ :
+Wenn ein Übergang $\delta(q, b, x)$, mit $q \in Q, b \in \Sigma, x \in \Gamma$, existiert, dann darf nicht (gleichzeitig) der Übergang $\delta(q, \varepsilon, x)$ vorkommen.
+
+Formal: Für jeden Zustand $q$ und alle Symbole $x, b$ gilt, wenn $\delta(q, b, x)$ definiert ist, dann ist $\delta(q, \varepsilon, x)$ undefiniert.
+
+## Berechnungsschritte
+
+Ein Berechnungsschritt $\delta(q, b, c)=(p, w)$ wird wie folgt interpretiert:
+1. Der Automat befindet sich im Zustand $q$.
+2. Der Automat liest das Symbol $b$ von der Eingabe (falls $b=\varepsilon$, wird nichts gelesen).
+3. Der Automat entfernt das oberste Kellersymbol $c$.
+4. Der Automat schreibt das Wort $w$ auf den Stack (von hinten nach vorne).
+5. Der Automat wechselt in den Zustand $p$.
+
+$$\text { Ein Übergang } \delta(q, b, c)=(p, w) \text { wird graphisch als }$$
+
+![](./img/35_keller.png)
+
+Analog zu den endlichen Zustandsautomaten gelten folgende Konventionen:
+- Akzeptierende Zustände werden mit einer doppelten Konturlinie gekennzeichnet.
+- Der Anfangszustand wird durch einen eingehenden Pfeil gekennzeichnet.
+
+## Definition (nichtdeterministischer Kellerautomat)
+
+Ein nichtdeterministischer Kellerautomat (NKA) ist ein 7-Tupel $\left(Q, \Sigma, \Gamma, \delta, q_0, \$, F\right)$, der sich vom KA nur in der Definition der Übergangsfunktion unterscheidet:
+$$
+\delta: Q \times(\Sigma \cup \varepsilon) \times \Gamma \rightarrow \mathcal{P}\left(Q \times \Gamma^*\right)
+$$
+
+
+## Definition (Konfiguration)
+
+Sei $M=\left(Q, \Sigma, \Gamma, \delta, q_0, \$, F\right)$ ein NKA.
+Eine Konfiguration von $M$ ist ein Element $(q, w, \gamma)$ aus $Q \times \Sigma^* \times \Gamma^*$, wobei
+$q$ für den Zustand steht,
+$w$ die verbleibende Eingabe repräsentiert,
+$\gamma$ für den Inhalt des Kellers steht.
+(Dabei steht das Symbol ganz links für das oberste Symbol.)
+Mit $\left(q_o, w, \$\right)$ bezeichnen wir die Startkonfiguration für die Eingabe $w$ und mit $(q, \varepsilon, \gamma)$ eine Endkonfiguration.
+
+
+## Definition (Berechnung)
+
+Sei $M=\left(Q, \Sigma, \Gamma, \delta, q_0, \$, F\right)$ ein NKA. Seien $w \in \Sigma^*$ und $\gamma \in \Gamma^*$.
+Eine Berechnung von $M$ auf $w$ ist:
+eine Folge von Berechnungsschritten,
+die in der Startkonfiguration beginnt und
+in einer Endkonfiguration $\left(q_f, \varepsilon, \gamma\right)$ endet, von der aus kein weiterer Berechnungsschritt mehr möglich ist.
+
+Die Berechnung ist akzeptierend, wenn für die Endkonfiguration $\left(q_f, \varepsilon, \gamma\right)$ gilt, dass $q_f \in F$
+
+## Definition (Sprache L(M))
+
+Sei $M=\left(Q, \Sigma, \Gamma, \delta, q_0, \$, F\right)$ ein NKA.
+Die Sprache $L(M)$ des Kellerautomaten $M$ ist definiert durch $L(M)=\left\{w \in \Sigma^* \mid\left(q_0, w, \$\right) \vdash^*(q, \varepsilon, \gamma)\right.$ für ein $q \in F$ und ein $\left.\gamma \in \Gamma^*\right\}$.
+Elemente von $L(M)$ werden (von $M$ ) akzeptierte Wörter genannt.
+
+## Äquivalenz mit kontextfreien Grammatiken
+
+Eine Sprache ist kontextfrei, genau dann, wenn es einen
+nichtdeterministischen Kellerautomaten gibt, der die Sprache erkennt.
