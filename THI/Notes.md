@@ -576,3 +576,38 @@ Elemente von $L(M)$ werden (von $M$ ) akzeptierte Wörter genannt.
 
 Eine Sprache ist kontextfrei, genau dann, wenn es einen
 nichtdeterministischen Kellerautomaten gibt, der die Sprache erkennt.
+
+# Turing Machine
+
+
+Eine (deterministische) Turing-Maschine (TM) ist ein 7-Tupel
+$$
+M=\left(Q, \Sigma, \Gamma, \delta, q_0, \sqcup, F\right)
+$$
+mit einer bzw. einem: 
+
+endlichen Menge von Zuständen $Q=\left\{q_0, q_1, \ldots, q_n\right\}(n \in \mathbb{N})$,
+
+- Eingabealphabet $\Sigma=\left\{a_1, a_2, \ldots, a_m\right\}(m \in \mathbb{N})$,
+- Übergangsfunktion $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times D, D=\{L, R\}$,
+- Startzustand $q_0 \in Q$,
+- Menge von akzeptierenden Zuständen $F \subseteq Q$,
+- Bandalphabet $\Gamma$ (endliche Menge von Symbolen) und $\Sigma \subset \Gamma$ und
+- Leerzeichen $_{\sqcup}$, mit $\lrcorner \in \Gamma$ und $\lrcorner \notin \Sigma$.
+
+
+Die Übergangsfunktion $\delta$ ist eine partielle Funktion
+$$
+\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times D .
+$$
+Sie bildet das 2-Tupel $(q, X)$ auf das Tripel $(p, Y, D)$ ab:
+$q, p \in Q$ und $X, Y \in \Gamma$
+- $D$ beschreibt die Bewegung des Lese-/Schreibkopfes über dem Band. $D$ kann die Werte $L$ für links (bzw. left) und $R$ für rechts (bzw. right) annehmen.
+
+Das Band
+ist in einzelne Zellen unterteilt, die jeweils ein beliebiges Symbol aus $\Gamma$ enthalten können, und
+beinhaltet zu Beginn die Eingabe, d. h. ein endliches Wort aus $\Sigma^*$. Alle anderen Zellen enthalten das besondere Symbol $\sqcup^2$.
+
+Der Lese-/Schreibkopf kann jeweils genau eine Zelle des Bandes lesen und beschreiben.
+
+![](./img/36_m_diff.png)
