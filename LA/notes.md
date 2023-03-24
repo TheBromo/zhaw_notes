@@ -860,3 +860,90 @@ dann hat die Matrix reduzierte Zeilenstufenform.
 
 ## Das Gauss- und Gauss-Jordan-Verfahren
 
+1. Wir bestimmen die am weitesten Links stehende Spalte, die von Null verschiedene Werte enthält.
+2. Ist die oberste Zahl der in Schritt 1 gefundenen Spalte eine Null, dann vertauschen wir die 1 . Zeile mit einer geeigneten anderen Zeile $\left(V_{1, j}\right)$
+3. Ist a das 1 . Element der in Schritt 1 gefundene Spalte, dann dividieren wir die 1 . Zeile durch a, um die führende Eins zu erzeugen. Man nennt das Element a das Pivotelement $\left(M_1\left(\frac{1}{a}\right)\right)$.
+4. Wir addieren passende Vielfache der 1 . Zeile zu den übrigen Zeilen, um unterhalb der führenden Eins Nullen zu erzeugen $\left(A_{i, 1}(\lambda)\right)$.
+5. Wir wenden die ersten 4 Schritte auf den Teil der Matrix an, den wir durch Streichen der 1 . Zeile erhalten, und wiederholen dieses Verfahren, bis die erweiterte Koeffizientenmatrix ZSF hat.
+6. Mit der letzten nicht verschwindenden Zeile beginnend, addieren wir geeignete Vielfache jeder Zeile zu den darüber liegenden Zeilen, um über den führenden Einsen Nullen zu erzeugen $\left(A_{i, j}(\lambda)\right)$.
+
+Gauss-Verfahren
+1. Wir führen die Schritte 1. bis 5. wie beim Gauss-Jordan-Verfahren durch.
+2. Wir lösen das LGS in Zeilenstufenform durch Rückwärtseinsetzen.
+
+
+### Gaus Bsp.
+
+$$
+\begin{aligned}
+&\left(\begin{array}{rrr|r}
+0 & -1 & 2 & 9 \\
+3 & 6 & -3 & 0 \\
+2 & 6 & -1 & 2
+\end{array}\right) \quad Z_1 \stackrel{\leftrightarrow}{\Rightarrow} Z_2 \quad\left(\begin{array}{rrr|r}
+3 & 6 & -3 & 0 \\
+0 & -1 & 2 & 9 \\
+2 & 6 & -1 & 2
+\end{array}\right) \quad \frac{1}{3} \cdot Z_1\left(\begin{array}{rrrr|r}
+\Rightarrow & 2 & -1 & 0 \\
+0 & 6 & -1 & 2 \\
+2
+\end{array}\right)\\
+&\underset{Z_3-2}{\Rightarrow} Z_1\left(\begin{array}{rrr|r}
+1 & 2 & -1 & 0 \\
+0 & -1 & 2 & 9 \\
+0 & 2 & 1 & 2
+\end{array}\right) \quad(-\mathbf{1}) \cdot Z_2 \quad\left(\begin{array}{rrr|rr|rr}
+1 & 2 & -1 & 0 \\
+0 & 1 & -2 & -9 \\
+0 & 2 & 1 & 2
+\end{array}\right) \quad Z_3-2 Z_2\left(\begin{array}{rrrr}
+1 & 2 & -1 \\
+0 & 1 & -2 \\
+0 & 0 & 5 & 20
+\end{array}\right)\\
+&\frac{1}{5} \cdot Z_3\left(\begin{array}{rrr|r}
+1 & 2 & -1 & 0 \\
+0 & 1 & -2 & -9 \\
+0 & 0 & 1 & 4
+\end{array}\right)
+\end{aligned}
+$$
+
+### Gaus Jord Bsp.
+
+$$
+\begin{aligned}
+&\left(\begin{array}{rrr|r}
+1 & 2 & -1 & 0 \\
+0 & 1 & -2 & -9 \\
+0 & 0 & 1 & 4
+\end{array}\right) \stackrel{Z_2+2 Z_3}{\Rightarrow}\left(\begin{array}{rrr|r}
+1 & 2 & -1 & 0 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 4
+\end{array}\right) Z_1+Z_3\left(\begin{array}{rrr|r}
+1 & 2 & 0 & 4 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 4
+\end{array}\right) \\
+& \stackrel{Z_1-2}{\Rightarrow} Z_2\left(\begin{array}{rrr|r}
+1 & 0 & 0 & 6 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 4
+\end{array}\right) .
+\end{aligned}
+$$
+
+
+Aufgaben: 
+
+$$
+(a)\left(\begin{array}{rrr|r}
+1 & -2 & 0 & 4 \\
+0 & 0 & 1 & 3
+\end{array}\right)
+$$
+
+$$
+$$
