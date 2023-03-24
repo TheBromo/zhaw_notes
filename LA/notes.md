@@ -936,14 +936,9 @@ $$
 $$
 
 
-Aufgaben: 
+## Diskussion der Lösungsmenge eines linearen Gleichungssystems
 
-$$
-(a)\left(\begin{array}{rrr|r}
-1 & -2 & 0 & 4 \\
-0 & 0 & 1 & 3
-\end{array}\right)
-$$
+![](./img/37_rang.png)
 
-$$
-$$
+Sei $r$ die Anzahl der Nicht-Nullzeilen in der Zeilenstufenform der Koeffizientenmatrix $A$ (nicht die erweiterte!). Dann heisst $r$ der Rang des Gleichungssystems. Man schreibt: $r=\operatorname{rg}(A)$ oder $\operatorname{rang}(A)$
+
