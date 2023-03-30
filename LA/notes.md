@@ -942,3 +942,107 @@ $$
 
 Sei $r$ die Anzahl der Nicht-Nullzeilen in der Zeilenstufenform der Koeffizientenmatrix $A$ (nicht die erweiterte!). Dann heisst $r$ der Rang des Gleichungssystems. Man schreibt: $r=\operatorname{rg}(A)$ oder $\operatorname{rang}(A)$
 
+## 2-reihige Determinante
+
+Gegeben sei die $2 \times 2$ Matrix $A=\left(\begin{array}{ll}a & b \\ c & d\end{array}\right)$. Die aus den Elementen von $A$ berechnete Grösse $a d-b c$ wird als 2-reihige Determinante oder Determinante 2. Ordnung bezeichnet und durch das Symbol:
+$$
+\operatorname{det}(A)=\left|\begin{array}{ll}
+a & b \\
+c & d
+\end{array}\right|=a d-b c
+$$
+
+## Inverse einer 2 x 2 Matrix
+
+Die Matrix $A=\left(\begin{array}{ll}a & b \\ c & d\end{array}\right) \in \mathbb{R}^{2 \times 2}$ ist für $\operatorname{det}(A)=a d-b c \neq 0$ invertierbar. In diesem Fall gilt:
+$$
+A^{-1}=\frac{1}{\operatorname{det}(A)}\left(\begin{array}{cc}
+d & -b \\
+-c & a
+\end{array}\right) .
+$$
+
+
+# Determinanten
+
+Sagt aus ob:
+
+- ein lineares Gleichungssystem eindeutig lösbar ist
+- eine Matrix invertierbar ist
+
+## Berechnung von 2- und 3-reihigen Determinanten
+
+$$\text { Für 2-reihige Determinanten: } \operatorname{det}(A)=\left|\begin{array}{ll}
+a & b \\
+c & d
+\end{array}\right|=a d-c b \text {. }$$
+
+![](./img/38_det.png)
+
+### Eigenschaft 1
+Die Matrix $A$ und ihre Transponierte $A^T$ besitzen dieselbe Determinante:
+$$
+\operatorname{det}\left(A^T\right)=\operatorname{det}(A)
+$$
+
+### Eigenschaft 2
+
+Beim Vertauschen zweier Zeilen (oder Spalten) ändert eine
+Determinante ihr Vorzeichen.
+
+$$\left|\begin{array}{ll}
+c & d \\
+a & b
+\end{array}\right|=c b-a d=-(a d-c b)=-\operatorname{det}(A)$$
+
+### Eigenschaft 3
+
+Besitzen die Elemente einer Zeile (oder Spalte) einer
+Determinante einen gemeinsamen Faktor $\lambda$, so darf dieser vor die Determinante gezogen werden.
+
+Umgekehrt wird eine Determinante mit einem reellen Skalar $\lambda$ multipliziert, indem man die Elemente einer beliebigen Zeile (oder Spalte) mit $\lambda$ multipliziert.
+
+### Eigenschaft 4
+
+Eine Determinante besitzt den Wert Null, wenn sie (mindestens) eine der folgenden Bedingung erfüllt:
+
+1. Alle Elemente einer Zeile (oder Spalte) sind Null.
+2. Zwei Zeilen (oder Spalten) stimmen überein.
+3. Eine Zeile (oder Spalte) ist als Linearkombination der übrigen Zeilen (oder Spalten) darstellbar
+
+### Eigenschaft 5
+
+Der Wert einer Determinante ändert sich nicht, wenn man zu einer Zeile (bzw. Spalte) ein beliebiges Vielfachen einer anderen Zeile (bzw. Spalte) elementweise addiert.
+
+
+### Eigenschaft 6
+
+Für zwei $n \times n$ Matrizen $A$ und $B$ gilt stets
+$$
+\operatorname{det}(A B)=\operatorname{det}(A) \operatorname{det}(B),
+$$
+d.h. die Determinante eines Matrizenproduktes $A B$ ist gleich dem Produkt der Determinanten.
+
+### Eigenschaft 7
+
+Die Determinante einer Dreiecksmatrix ist gleich dem Produkt der
+Hauptdiagonalelemente.
+
+Begründung für 2-reihige Determinanten:
+$$
+\operatorname{det}(A)=\left|\begin{array}{ll}
+a & b \\
+0 & d
+\end{array}\right|=a d \quad \text { und } \operatorname{det}(A)=\left|\begin{array}{ll}
+a & 0 \\
+c & d
+\end{array}\right|=a d
+$$
+
+### Eigenschaft 8
+
+Ist die Matrix invertierbar, dann gilt:
+$$
+\operatorname{det}\left(A^{-1}\right)=\frac{1}{\operatorname{det}(A)}
+$$
+
