@@ -508,10 +508,10 @@ Ein Kellerautomat für die kontextfreie Sprache $\left\{0^n 1^n \mid n>0\right\}
 
 Ein deterministischer Kellerautomat (KA) $M$ ist ein 7-Tupel $\left(Q, \Sigma, \Gamma, \delta, q_0, \$, F\right)$, wobei
 $Q$ ist eine endliche Menge von Zuständen.
+
 - $\Sigma$ ist das Alphabet der Eingabe.
 - $\Gamma$ ist das Alphabet des Kellers.
-- $\delta: Q \times(\Sigma \cup \varepsilon) \times \Gamma \rightarrow Q \times \Gamma^*$ ist eine (partielle) Übergangsfunktion.
-$q_0 \in Q$ ist der Startzustand.
+- $\delta: Q \times(\Sigma \cup \varepsilon) \times \Gamma \rightarrow Q \times \Gamma^*$ ist eine (partielle) Übergangsfunktion. $q_0 \in Q$ ist der Startzustand.
 - $\$ \in \Gamma$ ist ein ausgezeichnetes Symbol vom Alphabet des Kellers.
 - $F \subseteq Q$ ist die Menge der akzeptierenden Zustände.
 

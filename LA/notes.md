@@ -798,14 +798,16 @@ b_m
 lässt sich
 
 
-$$\left\{\begin{array}{cccc}
+$$
+\left\{\begin{array}{cccc}
 a_{11} x_1+a_{12} x_2+\ldots+a_{1 n} x_n & = & b_1 \\
 a_{21} x_1+a_{22} x_2+\ldots+a_{2 n} x_n & = & b_2 \\
 \vdots & \vdots & \vdots & \vdots \\
 a_{m 1} x_1+a_{m 2} x_2+\ldots+a_{m n} x_n & = & b_m
-\end{array}\right.$$
+\end{array}\right.
+$$
 
-als $A \vec{x}=\vec{b}$ schreiben. $A \in \math bb{R}^{m \times n}$ ist die Koeffizientenmatrix, $\vec{b} \in \mathbb{R}^m$ ist die rechte Seite des LGS und $\vec{x} \in \mathbb{R}^n$ ist der gesuchte Vektor der Unbekannten.
+als $A\vec{x}=\vec{b}$ schreiben. $A\in \mathbb{R}^{m \times n}$ ist die Koeffizientenmatrix, $\vec{b} \in \mathbb{R}^m$ ist die rechte Seite des LGS und $\vec{x} \in \mathbb{R}^n$ ist der gesuchte Vektor der Unbekannten.
 
 
 ## Elementare Umformungen und Zeilenstufenformen
