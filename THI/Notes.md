@@ -611,3 +611,24 @@ beinhaltet zu Beginn die Eingabe, d. h. ein endliches Wort aus $\Sigma^*$. Alle 
 Der Lese-/Schreibkopf kann jeweils genau eine Zelle des Bandes lesen und beschreiben.
 
 ![](./img/36_m_diff.png)
+
+
+## Maschinen mit meheren Stacks
+
+$\text { Maschine mit mehreren Stacks ( } k \text {-Stack-Maschine) }$
+
+$\text { Eine } k \text {-Stack-Maschine ist ein DKA mit } k \text { statt nur einem Stack. }$
+
+![](./img/38_stack.png)
+
+> Jede Sprache L, die von einer TM T akzeptiert wird, wird auch von einer
+> Zähler-Maschine Z mit 2 Zählern akzeptiert.
+
+a) Ein 2-Stack-Maschine kann eine TM simulieren.
+b) Eine Zählermaschine mit 3 Zählern kann eine 2-Stack-Maschine simulieren.
+c) Eine Zählermaschine mit 2 Zählern kann eine Zählermaschine mit 3 Zählern simulieren.
+
+1 1 1 1 10 10 1 10 1 100 10 1 1 1 1 100 10 100 10 1000 1 10 1 1 1 100000 10000 1 1000 1 1 1 100 10 10 100 1 100
+
+
+18509430403077407630668
